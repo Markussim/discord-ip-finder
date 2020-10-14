@@ -1,0 +1,23 @@
+{
+  "name": "discord-ip-finder",
+  "version": "1.0.0",
+  "description": "Cool Discord-IP-Finder",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linusromland/discord-ip-finder.git"
+  },
+  "author": "Linus Romland",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/linusromland/discord-ip-finder/issues"
+  },
+  "homepage": "https://github.com/linusromland/discord-ip-finder#readme",
+  "dependencies": {
+    "discord.js": "^12.3.1",
+    "public-ip": "^4.0.2"
+  }
+}

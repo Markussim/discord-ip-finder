@@ -16,11 +16,12 @@ client.on('message', async msg => {
 
     try {
         if (!(Object.keys(msg.mentions.users.toJSON()).length === 0)){
-            if (msg.mentions.users.toJSON()[0].id == 765951664095625266) { // very hard coded for the specific bot
-                    getIP(msg)
-            }
+            if (msg.content.indexOf("!bot 4") === 0) {
+                    getIP(msg, 4)
+            }else if (msg.content.indexOf("!bot 6") === 0) {
+                getIP(msg, 6)
         }
-
+        }
     } catch {
         msg.reply("Något blev fel. Försök igen");
     }
@@ -28,9 +29,12 @@ client.on('message', async msg => {
 
 client.login(token);
 
-function getIP(msg){
+function getIP(msg, ip){
     (async () => {   
-        //(await publicIp.v6())
-        msg.reply("IPv4 = " + (await publicIp.v4()))
+        if(ip == 4){
+            msg.reply("IPv4 = " + (await publicIp.v4()))
+        }else if(ip == 6){
+            msg.reply("IPv6 = " + (await publicIp.v6()))
+        }
     })();
 }
